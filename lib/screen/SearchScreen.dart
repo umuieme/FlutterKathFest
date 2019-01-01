@@ -7,11 +7,9 @@ class SearchScreen extends StatefulWidget {
 }
 
 class _SearchScreenState extends State<SearchScreen> {
-  TextEditingController controller;
+  String searchText = "";
 
-  _SearchScreenState() {
-//    controller = TextEditingController("asd");
-  }
+  _SearchScreenState() {}
 
   @override
   Widget build(BuildContext context) {
@@ -33,16 +31,24 @@ class _SearchScreenState extends State<SearchScreen> {
                 borderRadius: BorderRadius.all(Radius.circular(25))),
             child: TextField(
               cursorColor: Colors.red,
+              onChanged: this.onTextChange,
               decoration: InputDecoration(
                   border: InputBorder.none,
                   hintText: "Enter your search query"),
             ),
           ),
           // search button
-          AppButton("Search", this.onSearchPressed),
+          AppButton("Search", searchText.isEmpty ? null : this.onSearchPressed),
         ],
       ),
     );
+  }
+
+  onTextChange(String text) {
+    print("onTextChange called $text");
+    this.setState(() {
+      searchText = text;
+    });
   }
 
   onSearchPressed() {

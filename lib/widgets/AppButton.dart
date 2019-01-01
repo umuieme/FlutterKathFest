@@ -10,13 +10,16 @@ class AppButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: FlatButton(
+        disabledColor: Color(0x99FF5757),
+        disabledTextColor: Color(0xaaeeeeee),
+        textColor: Color(0xffffffff),
         onPressed: this.onPress,
         padding: EdgeInsets.symmetric(vertical: 16, horizontal: 40),
         child: Text(
           title,
-          style: TextStyle(color: Colors.white, fontSize: 16),
+          style: TextStyle(fontSize: 16),
         ),
-        color: Colors.red,
+        color: Color(0xFFFF5757),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
       ),
     );
