@@ -34,7 +34,8 @@ class FeedItem extends StatelessWidget {
                     children: <Widget>[
                       Text(
                         feedItem.name,
-                        style: TextStyle(fontSize: 16),
+                        style: TextStyle(
+                            fontSize: 16, fontWeight: FontWeight.w600),
                         textAlign: TextAlign.start,
                       ),
                       Container(
@@ -49,7 +50,14 @@ class FeedItem extends StatelessWidget {
                 )
               ],
             ),
-            Text(feedItem.description)
+            SizedBox(
+              height: 8,
+            ),
+            Text(
+              feedItem.description,
+              style: TextStyle(wordSpacing: 1),
+              textAlign: TextAlign.justify,
+            )
           ],
         ),
       ),

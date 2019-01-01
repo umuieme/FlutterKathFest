@@ -14,13 +14,13 @@ class _SearchScreenState extends State<SearchScreen> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(16.0),
+      padding: EdgeInsets.all(32.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Text(
             "Search",
-            style: TextStyle(),
+            style: TextStyle(fontWeight: FontWeight.w600, fontSize: 16),
             textAlign: TextAlign.start,
           ),
           Container(
