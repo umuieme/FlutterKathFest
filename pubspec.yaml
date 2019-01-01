@@ -42,6 +42,9 @@ flutter:
   #  - images/a_dot_ham.jpeg
   assets:
     - image/app_icon.png
+    - image/flutter-nepal.png
+    - image/dubino.png
+    - image/gdg.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.io/assets-and-images/#resolution-aware.
