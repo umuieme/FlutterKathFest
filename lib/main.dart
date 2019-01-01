@@ -21,7 +21,6 @@ class _FlutterNepalState extends State<FlutterNepal>
     with SingleTickerProviderStateMixin {
   int _currentIndex = 0;
   List<Widget> list = List();
-  var isFlightSelected = true;
 
   @override
   void initState() {
