@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kath_fest/screen/HomeScreen.dart';
+import 'package:kath_fest/screen/MessageScreen.dart';
 import 'package:kath_fest/screen/SearchScreen.dart';
 
 class MainScreen extends StatefulWidget {
@@ -42,7 +43,7 @@ class _MainScreenState extends State<MainScreen>
       ),
       body: TabBarView(
           controller: tabController,
-          children: [HomeScreen(), SearchScreen(), Text(pageTitle[2])]),
+          children: [HomeScreen(), SearchScreen(), MessageScreen()]),
       bottomNavigationBar: Container(
         decoration: BoxDecoration(color: Colors.white),
         child: TabBar(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kath_fest/widgets/AppButton.dart';
 
 class SearchScreen extends StatefulWidget {
   @override
@@ -37,21 +38,14 @@ class _SearchScreenState extends State<SearchScreen> {
                   hintText: "Enter your search query"),
             ),
           ),
-          Center(
-            child: FlatButton(
-              onPressed: () {},
-              padding: EdgeInsets.symmetric(vertical: 16, horizontal: 40),
-              child: Text(
-                "Search",
-                style: TextStyle(color: Colors.white, fontSize: 16),
-              ),
-              color: Colors.red,
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(40)),
-            ),
-          )
+          // search button
+          AppButton("Search", this.onSearchPressed),
         ],
       ),
     );
+  }
+
+  onSearchPressed() {
+    print("Search Button Pressed");
   }
 }
