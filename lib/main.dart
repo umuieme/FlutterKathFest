@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import './pages/home.dart';
 import './pages/inbox.dart';
 import './pages/search.dart';
-import 'package:bmnav/bmnav.dart' as bmnav;
+//import 'package:bmnav/bmnav.dart' as bmnav;
 
 void main() => runApp(MaterialApp(
       debugShowCheckedModeBanner: false,
@@ -21,73 +21,41 @@ class _FlutterNepalState extends State<FlutterNepal>
     with SingleTickerProviderStateMixin {
   int _currentIndex = 0;
   List<Widget> list = List();
+  List<Widget> _tabList = [
+    Home("Home"),
+    Search("Search"),
+    Inbox("Inbox"),
+  ];
+  TabController _tabController;
+
+  @override
+  void dispose() {
+    _tabController.dispose();
+    super.dispose();
+  }
 
   @override
   void initState() {
-    list..add(Home("Home"))..add(Search("Search"))..add(Inbox("Inbox"));
+    // list..add(Home("Home"))..add(Search("Search"))..add(Inbox("Inbox"));
 
     super.initState();
+    _tabController = TabController(vsync: this, length: _tabList.length);
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
-      body: list[_currentIndex],
-
-      bottomNavigationBar: 
-      // bmnav.BottomNav(
-      //   index: _currentIndex,
-      //   labelStyle: bmnav.LabelStyle(visible: false),
-      //   elevation: 8.0,
-      //  iconStyle: bmnav.IconStyle(onSelectColor: Colors.white),
-        // onTap: (int i) {
-        //   if (i == 0) {
-        //     Navigator.of(context).push(
-        //       MaterialPageRoute(
-        //         builder: (context) => Home("Home"),
-        //       ),
-        //     );
-        //   } else if (i == 1) {
-        //     Navigator.of(context).push(
-        //       MaterialPageRoute(
-        //         builder: (context) => Search("Search"),
-        //       ),
-        //     );
-        //   } else if (i == 2) {
-        //     Navigator.of(context).push(
-        //       MaterialPageRoute(
-        //         builder: (context) => Inbox("Inbox"),
-        //       ),
-        //     );
-        //   }
-        // },
-      //   items: [
-      //     bmnav.BottomNavItem(
-      //       Icons.home, isFlightSelected
-      //     ),
-      //     bmnav.BottomNavItem(Icons.search),
-      //     bmnav.BottomNavItem(Icons.message),
-      //   ],
-      // ),
-
-      // Theme(
-      //   data: Theme.of(context).copyWith(
-      //     //sets the background color of the 'Bottom Navigation Bar'
-      //     canvasColor: bottomNavigationColor,
-      //     //sets the active color of the 'BottomNavigationBar/ if 'Brightness' is light
-      //     primaryColor: bottomNavigationColor,
-      //     textTheme: Theme
-      //     .of(context)
-      //     .textTheme
-      //     .copyWith(caption: TextStyle(color: Colors.black))
-      //   ),
-
-       BottomNavigationBar(
+      body: //list[_currentIndex],
+          TabBarView(
+        children: _tabList,
+        controller: _tabController,
+      ),
+      bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex,
         onTap: (int index) {
           setState(() {
             _currentIndex = index;
+            _tabController.animateTo(_currentIndex);
           });
         },
         items: <BottomNavigationBarItem>[
@@ -120,4 +88,3 @@ class _FlutterNepalState extends State<FlutterNepal>
     );
   }
 }
-

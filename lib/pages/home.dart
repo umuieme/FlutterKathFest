@@ -18,10 +18,7 @@ class _HomeState extends State<Home> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        // leading: Padding(
-        //   padding: const EdgeInsets.all(8.0),
-        //   child: logoIcon(),
-        // ) ,
+       
         leading: Image.asset('assets/images/icon.png'),
         actions: <Widget>[
           Padding(
