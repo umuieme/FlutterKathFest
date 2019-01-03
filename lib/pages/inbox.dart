@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'search.dart';
+import './messagecard.dart';
 
 class Inbox extends StatefulWidget {
   final String title;
@@ -16,7 +16,6 @@ class _InboxState extends State<Inbox> {
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
-       
         leading: Image.asset('assets/images/icon.png'),
         actions: <Widget>[
           Padding(
@@ -28,18 +27,18 @@ class _InboxState extends State<Inbox> {
             ),
           ),
         ],
-
         title: Text(
           "INBOX",
           style: TextStyle(fontFamily: 'OpenSans', color: Colors.black),
         ),
         centerTitle: true,
       ),
-      body: Column(
+      body: ListView(
         children: <Widget>[
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 20.0),
             child: Center(
+              //BUTTON BEGINS:
               child: InkWell(
                 onTap: () {},
                 child: Container(
@@ -62,96 +61,17 @@ class _InboxState extends State<Inbox> {
               ),
             ),
           ),
-          Container(
-            height: 290.0,
-            child: Padding(
-              padding:
-                  const EdgeInsets.symmetric(horizontal: 10.0, vertical: 20.0),
-              child: Card(
-                elevation: 4.0,
-                child: Padding(
-                  padding: const EdgeInsets.all(28.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      Text(
-                        "Your Messages",
-                        style: TextStyle(
-                          fontFamily: 'OpenSans',
-                          fontSize: 18.0,
-                          color: Colors.black38,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      SizedBox(
-                        height: 30.0,
-                      ),
-                      Row(
-                        children: <Widget>[
-                          Image.asset('assets/images/gdg.png'),
-                          SizedBox(
-                            width: 10.0,
-                          ),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: <Widget>[
-                              Text(
-                                "Google Developers Group",
-                                style: TextStyle(
-                                    fontSize: 18.0,
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.bold,
-                                    fontFamily: 'OpenSans'),
-                              ),
-                              Text(
-                                "Your Message: Hello Let's Go!",
-                                style: TextStyle(
-                                    fontSize: 18.0,
-                                    color: Colors.black45,
-                                    fontWeight: FontWeight.normal,
-                                    fontFamily: 'OpenSans'),
-                              )
-                            ],
-                          )
-                        ],
-                      ),
-                      SizedBox(
-                        height: 25.0,
-                      ),
-                      Row(
-                        children: <Widget>[
-                          Image.asset('assets/images/flutter.png'),
-                          SizedBox(
-                            width: 10.0,
-                          ),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: <Widget>[
-                              Text(
-                                "Flutter Nepal",
-                                style: TextStyle(
-                                    fontSize: 18.0,
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.bold,
-                                    fontFamily: 'OpenSans'),
-                              ),
-                              Text(
-                                "Flutter Rocks: Let's Flutter",
-                                style: TextStyle(
-                                    fontSize: 18.0,
-                                    color: Colors.black45,
-                                    fontWeight: FontWeight.normal,
-                                    fontFamily: 'OpenSans'),
-                              )
-                            ],
-                          )
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
+          MessageCard(
+            title: "Your Messages",
+            logoPath: 'assets/images/flutter.png',
+            message: "Sam: Hello Flutter!",
+            senderName: "Flutter Nepal Group",
+          ),
+          MessageCard(
+            title: "Your Messages",
+            logoPath: 'assets/images/gdg.png',
+            message: "Robin: Hello Google!",
+            senderName: "Google Developers Group",
           ),
         ],
       ),

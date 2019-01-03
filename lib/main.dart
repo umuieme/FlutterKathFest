@@ -45,7 +45,7 @@ class _FlutterNepalState extends State<FlutterNepal>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-       //list[_currentIndex],
+       //body: list[_currentIndex],
         body:  
           TabBarView(
         children: _tabList,
