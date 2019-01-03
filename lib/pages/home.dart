@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'inbox.dart';
-import 'search.dart';
 
 class Home extends StatefulWidget {
   final String title;
@@ -10,15 +9,12 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  Inbox inbox;
-  var search = new Search("Search");
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-       
         leading: Image.asset('assets/images/icon.png'),
         actions: <Widget>[
           Padding(
@@ -37,184 +33,99 @@ class _HomeState extends State<Home> {
         ),
         centerTitle: true,
       ),
+
       body: ListView(
         children: <Widget>[
-          Column(
-            children: <Widget>[
-              Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.all(Radius.circular(145.0))
-                ),
-                height: 290.0,
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(
-                      horizontal: 10.0, vertical: 20.0),
-                  child: Card(
-                    elevation: 4.0,
-                    child: Padding(
-                      padding: const EdgeInsets.all(28.0),
-                      child: Column(
-                        children: <Widget>[
-                          Row(
-                            children: <Widget>[
-                              Image.asset('assets/images/flutter.png'),
-                              SizedBox(
-                                width: 10.0,
-                              ),
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: <Widget>[
-                                  Text(
-                                    "Flutter Nepal",
-                                    style: TextStyle(
-                                        fontSize: 18.0,
-                                        color: Colors.black,
-                                        fontWeight: FontWeight.bold,
-                                        fontFamily: 'OpenSans'),
-                                  ),
-                                  Text(
-                                    "6 hours ago",
-                                    style: TextStyle(
-                                        fontSize: 18.0,
-                                        color: Colors.black45,
-                                        fontWeight: FontWeight.normal,
-                                        fontFamily: 'OpenSans'),
-                                  )
-                                ],
-                              )
-                            ],
-                          ),
-                          SizedBox(
-                            height: 10.0,
-                          ),
-                          Text(
-                            "Lorem ipsum dolor sit amet,mollit anim id est laborum, consectetur pa qui officia mollit anim id est laborum deserunt mollit anim id est laborum.",
-                            style: TextStyle(
-                              fontSize: 16.0,
-                              fontFamily: 'OpenSans',
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              Container(
-                height: 290.0,
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(
-                      horizontal: 10.0, vertical: 20.0),
-                  child: Card(
-                    elevation: 4.0,
-                    child: Padding(
-                      padding: const EdgeInsets.all(28.0),
-                      child: Column(
-                        children: <Widget>[
-                          Row(
-                            children: <Widget>[
-                              Image.asset('assets/images/gdg.png'),
-                              SizedBox(
-                                width: 10.0,
-                              ),
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: <Widget>[
-                                  Text(
-                                    "Google Developers Group",
-                                    style: TextStyle(
-                                        fontSize: 18.0,
-                                        color: Colors.black,
-                                        fontWeight: FontWeight.bold,
-                                        fontFamily: 'OpenSans'),
-                                  ),
-                                  Text(
-                                    "3 hours ago",
-                                    style: TextStyle(
-                                        fontSize: 18.0,
-                                        color: Colors.black45,
-                                        fontWeight: FontWeight.normal,
-                                        fontFamily: 'OpenSans'),
-                                  )
-                                ],
-                              )
-                            ],
-                          ),
-                          SizedBox(
-                            height: 10.0,
-                          ),
-                          Text(
-                            "Lorem ipsum dolor sit amet,mollit anim id est laborum, consectetur pa qui officia mollit anim id est laborum deserunt mollit anim id est laborum.",
-                            style: TextStyle(
-                              fontSize: 16.0,
-                              fontFamily: 'OpenSans',
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              Container(
-                height: 290.0,
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(
-                      horizontal: 10.0, vertical: 20.0),
-                  child: Card(
-                    elevation: 4.0,
-                    child: Padding(
-                      padding: const EdgeInsets.all(28.0),
-                      child: Column(
-                        children: <Widget>[
-                          Row(
-                            children: <Widget>[
-                              Image.asset('assets/images/circle.png'),
-                              SizedBox(
-                                width: 10.0,
-                              ),
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: <Widget>[
-                                  Text(
-                                    "Dubinu",
-                                    style: TextStyle(
-                                        fontSize: 18.0,
-                                        color: Colors.black,
-                                        fontWeight: FontWeight.bold,
-                                        fontFamily: 'OpenSans'),
-                                  ),
-                                  Text(
-                                    "12 mins ago",
-                                    style: TextStyle(
-                                        fontSize: 18.0,
-                                        color: Colors.black45,
-                                        fontWeight: FontWeight.normal,
-                                        fontFamily: 'OpenSans'),
-                                  )
-                                ],
-                              )
-                            ],
-                          ),
-                          SizedBox(
-                            height: 10.0,
-                          ),
-                          Text(
-                            "Lorem ipsum dolor sit amet,mollit anim id est laborum, consectetur pa qui officia mollit anim id est laborum deserunt mollit anim id est laborum.",
-                            style: TextStyle(
-                              fontSize: 16.0,
-                              fontFamily: 'OpenSans',
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            ],
+          ChatCard(
+            logoPath: 'assets/images/flutter.png',
+            title: "Flutter Nepal Group",
+            subtitle: "3 hours ago",
+            content: "Lorem ipsum dolor sit amet,mollit anim id est laborum, consectetur pa qui officia mollit anim id est laborum deserunt mollit anim id est laborum.",
+
+          ),
+          ChatCard(
+            logoPath: 'assets/images/gdg.png',
+            title: "Google Developers Group",
+            subtitle: "1 hours ago",
+            content: "Lorem ipsum dolor sit amet,mollit anim id est laborum, consectetur pa qui officia mollit anim id est laborum deserunt mollit anim id est laborum.",
+          ),
+          ChatCard(
+            logoPath: 'assets/images/circle.png',
+            title: "Dubino",
+            subtitle: "12 hours ago",
+            content: "Lorem ipsum dolor sit amet,mollit anim id est laborum, consectetur pa qui officia mollit anim id est laborum deserunt mollit anim id est laborum.",
           ),
         ],
+      ),
+    );
+  }
+}
+
+class ChatCard extends StatelessWidget {
+  final String logoPath;
+  final String title;
+  final String subtitle;
+  final String content;
+
+  ChatCard({this.logoPath, this.title, this.subtitle, this.content});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(10.0),
+      child: Card(
+        elevation: 10.0,
+        child: Column(
+          children: <Widget>[
+            Row(
+              children: <Widget>[
+                Container(
+                  height: 80.0,
+                  width: 80.0,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(40.0),
+                    image: DecorationImage(
+                      image: AssetImage(logoPath),
+                    ),
+                  ),
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Text(
+                      title,
+                      style: TextStyle(
+                        fontSize: 18.0,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: 'Oxygen',
+                      ),
+                    ),
+                    Text(
+                      subtitle,
+                      style: TextStyle(
+                        color: Color(0xFFAAAAAA),
+                        fontSize: 18.0,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: 'Oxygen',
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+            Padding(
+              padding:
+                  const EdgeInsets.only(left: 18.0, right: 18.0, bottom: 15.0),
+              child: Text(
+                 content,
+                style: TextStyle(
+                  fontFamily: 'Oxygen',
+                  fontSize: 17.5,
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

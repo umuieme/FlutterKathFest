@@ -20,7 +20,7 @@ class FlutterNepal extends StatefulWidget {
 class _FlutterNepalState extends State<FlutterNepal>
     with SingleTickerProviderStateMixin {
   int _currentIndex = 0;
-  List<Widget> list = List();
+//  List<Widget> list = List();
   List<Widget> _tabList = [
     Home("Home"),
     Search("Search"),
@@ -45,7 +45,8 @@ class _FlutterNepalState extends State<FlutterNepal>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: //list[_currentIndex],
+       //list[_currentIndex],
+        body:  
           TabBarView(
         children: _tabList,
         controller: _tabController,
@@ -85,6 +86,9 @@ class _FlutterNepalState extends State<FlutterNepal>
           ),
         ],
       ),
+
+
+
     );
   }
 }
