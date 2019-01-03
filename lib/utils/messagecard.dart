@@ -38,6 +38,7 @@ class MessageCard extends StatelessWidget {
                     ),
                     Row(
                       children: <Widget>[
+                        
                         Image.asset(logoPath),
                         SizedBox(
                           width: 10.0,
@@ -65,38 +66,6 @@ class MessageCard extends StatelessWidget {
                         )
                       ],
                     ),
-                    // SizedBox(
-                    //   height: 25.0,
-                    // ),
-                    // Row(
-                    //   children: <Widget>[
-                    //     Image.asset(logoPath),
-                    //     SizedBox(
-                    //       width: 10.0,
-                    //     ),
-                    //     Column(
-                    //       crossAxisAlignment: CrossAxisAlignment.start,
-                    //       children: <Widget>[
-                    //         Text(
-                    //           "Flutter Nepal",
-                    //           style: TextStyle(
-                    //               fontSize: 18.0,
-                    //               color: Colors.black,
-                    //               fontWeight: FontWeight.bold,
-                    //               fontFamily: 'OpenSans'),
-                    //         ),
-                    //         Text(
-                    //           "Flutter Rocks: Let's Flutter",
-                    //           style: TextStyle(
-                    //               fontSize: 18.0,
-                    //               color: Colors.black45,
-                    //               fontWeight: FontWeight.normal,
-                    //               fontFamily: 'OpenSans'),
-                    //         )
-                    //       ],
-                    //     )
-                    //   ],
-                    // ),
                   ],
                 ),
               ),
@@ -107,3 +76,42 @@ class MessageCard extends StatelessWidget {
     );
   }
 }
+
+// class Messages extends StatelessWidget {
+//   final String logoPath, title, message;
+
+//   Messages({this.logoPath, this.title, this.message});
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Row(
+//       children: <Widget>[
+//         Image.asset(logoPath),
+//         SizedBox(
+//           width: 10.0,
+//         ),
+//         Column(
+//           crossAxisAlignment: CrossAxisAlignment.start,
+//           children: <Widget>[
+//             Text(
+//               title,
+//               style: TextStyle(
+//                   fontSize: 18.0,
+//                   color: Colors.black,
+//                   fontWeight: FontWeight.bold,
+//                   fontFamily: 'OpenSans'),
+//             ),
+//             Text(
+//               message,
+//               style: TextStyle(
+//                   fontSize: 18.0,
+//                   color: Colors.black45,
+//                   fontWeight: FontWeight.normal,
+//                   fontFamily: 'OpenSans'),
+//             )
+//           ],
+//         )
+//       ],
+//     );
+//   }
+// }

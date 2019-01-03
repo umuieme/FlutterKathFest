@@ -4,11 +4,13 @@ import './pages/inbox.dart';
 import './pages/search.dart';
 //import 'package:bmnav/bmnav.dart' as bmnav;
 
-void main() => runApp(MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: "Flutter Nepal App",
-      home: FlutterNepal(),
-    ));
+void main() => runApp(
+      MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: "Flutter Nepal App",
+        home: FlutterNepal(),
+      ),
+    );
 
 final bottomNavigationColor = Color(0xFFFFF5757);
 
@@ -45,9 +47,8 @@ class _FlutterNepalState extends State<FlutterNepal>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-       //body: list[_currentIndex],
-        body:  
-          TabBarView(
+      //body: list[_currentIndex],
+      body: TabBarView(
         children: _tabList,
         controller: _tabController,
       ),
@@ -86,9 +87,6 @@ class _FlutterNepalState extends State<FlutterNepal>
           ),
         ],
       ),
-
-
-
     );
   }
 }

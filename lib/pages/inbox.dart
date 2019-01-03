@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import './messagecard.dart';
-import 'popup.dart';
+import 'package:flutter_nepal_app/utils/messagecard.dart';
+import 'package:flutter_nepal_app/utils/popup.dart';
 
 class Inbox extends StatefulWidget {
   final String title;

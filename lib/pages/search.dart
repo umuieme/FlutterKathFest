@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import './popup.dart';
+import '../utils/popup.dart';
 
 class Search extends StatefulWidget {
   final String title;
@@ -8,8 +8,6 @@ class Search extends StatefulWidget {
   @override
   _SearchState createState() => _SearchState();
 }
-
-
 
 class _SearchState extends State<Search> {
 

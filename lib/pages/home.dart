@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'chatcard.dart';
-import 'popup.dart';
+import '../utils/chatcard.dart';
+import '../utils/popup.dart';
 
 class Home extends StatefulWidget {
   final String title;
