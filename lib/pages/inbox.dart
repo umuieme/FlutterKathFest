@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import './messagecard.dart';
+import 'popup.dart';
 
 class Inbox extends StatefulWidget {
   final String title;
@@ -18,14 +19,8 @@ class _InboxState extends State<Inbox> {
         backgroundColor: Colors.white,
         leading: Image.asset('assets/images/icon.png'),
         actions: <Widget>[
-          Padding(
-            padding: const EdgeInsets.only(right: 16.0),
-            child: Icon(
-              Icons.more_vert,
-              color: Colors.black,
-              size: 33.0,
-            ),
-          ),
+          Popup(),
+          
         ],
         title: Text(
           "INBOX",

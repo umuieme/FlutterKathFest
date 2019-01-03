@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import './popup.dart';
 
 class Search extends StatefulWidget {
   final String title;
@@ -8,7 +9,7 @@ class Search extends StatefulWidget {
   _SearchState createState() => _SearchState();
 }
 
-enum Settings { About, Flutter, Contact }
+
 
 class _SearchState extends State<Search> {
 
@@ -21,26 +22,7 @@ class _SearchState extends State<Search> {
         backgroundColor: Colors.white,
         leading: Image.asset('assets/images/icon.png'),
         actions: <Widget>[
-          Padding(
-              padding: const EdgeInsets.only(right: 16.0),
-              child: PopupMenuButton(
-                icon: Icon(Icons.more_vert, color: Colors.black,),
-                itemBuilder: (BuildContext context) =>
-                    <PopupMenuEntry<Settings>>[
-                      const PopupMenuItem<Settings>(
-                        value: Settings.About,
-                        child: Text("About Us"),
-                      ),
-                      const PopupMenuItem<Settings>(
-                        value: Settings.Contact,
-                        child: Text("Contact Us"),
-                      ),
-                      const PopupMenuItem<Settings>(
-                        value: Settings.Flutter,
-                        child: Text("Flutter Us"),
-                      ),
-                    ],
-              )),
+          Popup(),
         ],
         title: Text(
           "SEARCH",

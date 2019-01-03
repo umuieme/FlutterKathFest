@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'chatcard.dart';
+import 'popup.dart';
 
 class Home extends StatefulWidget {
   final String title;
@@ -17,14 +18,7 @@ class _HomeState extends State<Home> {
       appBar: AppBar(
         leading: Image.asset('assets/images/icon.png'),
         actions: <Widget>[
-          Padding(
-            padding: const EdgeInsets.only(right: 16.0),
-            child: Icon(
-              Icons.more_vert,
-              color: Colors.black,
-              size: 33.0,
-            ),
-          ),
+          Popup(),
         ],
         backgroundColor: Colors.white,
         title: Text(
