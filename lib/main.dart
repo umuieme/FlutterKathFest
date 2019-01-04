@@ -57,6 +57,10 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  final Shader linearGradient = LinearGradient(
+    colors: <Color>[Color(0xffDA44bb), Color(0xff8921aa)],
+  ).createShader(Rect.fromLTWH(0, 0, 200, 50));
+
   @override
   Widget build(BuildContext context) {
     // This method is rerun every time setState is called, for instance as done
@@ -91,21 +95,28 @@ class _MyHomePageState extends State<MyHomePage> {
           // horizontal).
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
+            RichText(
+              text: TextSpan(
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 20,
+                      fontWeight: FontWeight.w600),
+                  children: [
+                    TextSpan(text: "Fl",style: TextStyle(color: Colors.red) ),
+                    TextSpan(text: "utt",style: TextStyle(color: Colors.blue, background: Paint()..color = Colors.purple), ),
+                    TextSpan(text: "er N",style: TextStyle(color: Colors.green, fontWeight: FontWeight.w900, fontSize: 30), ),
+                    TextSpan(text: "epal",style: TextStyle(color: Colors.orange, fontStyle: FontStyle.italic) ),
+                  ]),
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.display1,
-            ),
+            Text("Flutter Nepal", style: TextStyle(fontSize: 50,foreground: Paint()..shader = linearGradient),)
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+//      floatingActionButton: FloatingActionButton(
+//        onPressed: _incrementCounter,
+//        tooltip: 'Increment',
+//        child: Icon(Icons.add),
+//      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
