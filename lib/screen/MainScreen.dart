@@ -3,17 +3,21 @@ import 'package:kath_fest/screen/HomeScreen.dart';
 import 'package:kath_fest/screen/MessageScreen.dart';
 import 'package:kath_fest/screen/SearchScreen.dart';
 
+//MainScreen is a Stateful widget because it has changeable widgets like changing title of the page, changing tabs
 class MainScreen extends StatefulWidget {
+  //Statefulwidget needs to have a State so we are calling method createState which returns MainScreenState, a class with State
   @override
   _MainScreenState createState() => _MainScreenState();
 }
 
 class _MainScreenState extends State<MainScreen>
-    with SingleTickerProviderStateMixin {
+    with SingleTickerProviderStateMixin { 
   //list of pages needed 
   final pageTitle = ["Home", "Search", "Inbox"];
+  //instance of TabController to manipulate TabController widget.
   TabController tabController;
 
+  //Constructor which initialises the tabController with length of 3 tabs and vsync:this means  
   _MainScreenState() {
     tabController = TabController(length: 3, vsync: this);
   }
