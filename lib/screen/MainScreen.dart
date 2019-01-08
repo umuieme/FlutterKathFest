@@ -10,6 +10,7 @@ class MainScreen extends StatefulWidget {
 
 class _MainScreenState extends State<MainScreen>
     with SingleTickerProviderStateMixin {
+  //list of pages needed 
   final pageTitle = ["Home", "Search", "Inbox"];
   TabController tabController;
 
